@@ -34,7 +34,11 @@
             bool answer = false;
 
             // code here
-            answer = a % b == 0;
+            if (b != 0)
+            {
+                answer = a % b == 0;
+                
+            }
             // end
 
             return answer;
@@ -42,13 +46,15 @@
         public double Task4(double d, double f, double g)
         {
             double answer = 0;
-            // int newd = int(d);
-            double[] arr = {Math.Abs(d), Math.Abs(f), Math.Abs(g)};
-            // code here
-            answer = arr.Max();
+            double absD = Math.Abs(d);
+            double absF = Math.Abs(f);
+            double absG = Math.Abs(g);
+
+            if (absD >= absF && absD >= absG) answer = d;
+            else if (absF >= absD && absF >= absG) answer = f;
+            else answer = g;
             
             // end
-
             return answer;
         }
         public double Task5(double x)
@@ -59,7 +65,7 @@
             if (x <= -1) {
                 answer = 0;
             }
-            if (-1 < x && x <= 0) {
+            else if (-1 < x && x <= 0) {
                 answer = x+1;
             }
             else
